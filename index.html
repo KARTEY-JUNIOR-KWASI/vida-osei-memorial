@@ -58,7 +58,7 @@
   --f-body: 'Newsreader',Georgia,'Times New Roman',serif;
   --f-label: 'Hanken Grotesk',system-ui,-apple-system,sans-serif;
   --pw: 390px;
-  --ar: 1.414;
+  --ar: 0.705;
   --dock-h: 68px;
 }
 
@@ -1326,12 +1326,15 @@ main#stage {
 
   function measure() {
     var w = window.innerWidth, h = window.innerHeight;
-    var isDesktop = (w >= 768 && w > h * 1.05) || (w >= 920);
+    var isDesktop = (w >= 960 && w > h * 1.25);
     var m = isDesktop ? 'book' : 'mobile';
-    var ar = 1.414;
-    var pw = m === 'book'
-      ? Math.min(500, (w - 72) / 2, (h - 220) / ar)
-      : Math.min(420, w - 32, (h - 240) / ar);
+    var ar = 0.705;
+    var pw;
+    if (m === 'book') {
+      pw = Math.min(520, (w - 96) / 2, (h - 200) / ar);
+    } else {
+      pw = Math.min(580, w - 24, (h - 250) / ar);
+    }
     root.style.setProperty('--pw', Math.round(pw) + 'px');
     return { m: m, pw: pw };
   }
