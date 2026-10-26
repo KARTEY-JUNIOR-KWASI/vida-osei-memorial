@@ -15,7 +15,7 @@
 <meta property="og:image:alt" content="Funeral programme of Vida Abena Osei">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="In Loving Memory of Vida Abena Osei">
-<meta name="twitter:description" content="Celebration of life service — Asuom, Eastern Region.">
+<meta name="twitter:description" content="Celebration of the life and legacy of Vida Abena Osei (Sister Vida).">
 <meta name="twitter:image" content="pages/s01.jpg">
 
 <!-- Favicon -->
@@ -1005,23 +1005,50 @@ main#stage {
   var LIVESTREAM   = '';
 
   /* ──────────────────────────────────────────────────────────
-     PAGE DATA (22 Pages)
+     PAGE DATA (26 Pages)
      ────────────────────────────────────────────────────────── */
-  var TOTAL = 22;
+  var TOTAL = 26;
   var LABELS = [
-    'Front cover', 'Her portrait', 'Order of service', 'Biography', 'Biography, continued',
-    'A family portrait', 'Tributes', 'Tribute by children', 'Photo gallery, children',
-    'Tribute by grandchildren', 'Tribute by grandchildren, continued',
-    'Photographs of the grandchildren', 'Photographs of the grandchildren, continued',
-    'Tribute by great-grandchildren', 'Tribute by in-laws',
-    'Tribute by the Presbyterian Church', 'Tribute by the Presbyterian Church, continued',
-    'Life in pictures', 'Photographs', 'Hymns', 'Hymns, continued', 'Appreciation'
+    'Front cover',
+    'Order of service',
+    'Scripture reading',
+    'Biography',
+    'Biography, continued',
+    'Tribute by children',
+    'Tribute by children, continued',
+    'Tribute by children, continued',
+    'Tribute by siblings',
+    'Tribute by siblings, continued',
+    'Tribute by the church',
+    'Tribute by the church, continued',
+    'Tribute by the church, continued',
+    'Tribute by friends & loved ones',
+    'Tribute by Women\'s Fellowship',
+    'Tribute by Women\'s Fellowship, continued',
+    'Tribute by New Patriotic Party',
+    'Tribute by New Patriotic Party, continued',
+    'Photo gallery',
+    'Photographs',
+    'Photographs',
+    'Photographs',
+    'Photographs',
+    'Photographs',
+    'Hymn: Abide With Me',
+    'Appreciation & acknowledgments'
   ];
   var TOC = [
-    ['Order of service', 3], ['Biography', 4], ['Tributes by children', 8],
-    ['Tributes by grandchildren', 10], ['Tribute by great-grandchildren', 14],
-    ['Tribute by in-laws', 15], ['Tribute by the Presbyterian Church', 16],
-    ['Life in pictures', 18], ['Hymns', 20], ['Appreciation', 22]
+    ['Order of service', 2],
+    ['Scripture reading', 3],
+    ['Biography', 4],
+    ['Tributes by children', 6],
+    ['Tribute by siblings', 9],
+    ['Tribute by the church', 11],
+    ['Tribute by friends', 14],
+    ['Women\'s Fellowship', 15],
+    ['Tribute by NPP', 17],
+    ['Photo gallery', 19],
+    ['Hymns', 25],
+    ['Appreciation', 26]
   ];
   var NL = TOTAL / 2;
 
@@ -1220,10 +1247,10 @@ main#stage {
   var approvedTributes = [];
   var localTributes = [];
   var realtimeSub = null;
-  try { localTributes = JSON.parse(localStorage.getItem('ayie-tributes-ante') || '[]') || []; } catch (e) { localTributes = []; }
+  try { localTributes = JSON.parse(localStorage.getItem('ayie-tributes-vida-osei') || '[]') || []; } catch (e) { localTributes = []; }
 
   function saveLocal() {
-    try { localStorage.setItem('ayie-tributes-ante', JSON.stringify(localTributes.slice(0, 50))); } catch (e) {}
+    try { localStorage.setItem('ayie-tributes-vida-osei', JSON.stringify(localTributes.slice(0, 50))); } catch (e) {}
   }
   function fmt(at) {
     try { return new Date(at).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }); } catch(e) { return ''; }
